@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
             [
                 [
                     'name'=>'home',
-                    'alias'=>'home',
+                    'alias'=>'hero_section',
                     'text'=>'<h2>We create <strong>awesome</strong> web templates</h2><p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text  printer took a galley of type and scrambled it to make a type specimen.</p>',
                     'images'=>'main_device_image.png'
                 ],
