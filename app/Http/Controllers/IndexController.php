@@ -7,6 +7,8 @@ use App\Page;
 use App\Service;
 use App\Portfolio;
 use App\People;
+use App\Client1;
+use Symfony\Component\HttpKernel\Client;
 
 class IndexController extends Controller
 {
@@ -15,9 +17,10 @@ class IndexController extends Controller
     public function execute(Request $request){
 
         $pages = Page::all();
-        $portfolio = Portfolio::all();
+        $portfolios = Portfolio::all();
         $services = Service::all();
         $peoples = People::all();
+        $clients = Client1::all();
 
         $menu = array();
         foreach ($pages as $page){
@@ -38,12 +41,14 @@ class IndexController extends Controller
 
         $item = array('title'=>'Contact','alias'=>'contact');
         array_push($menu,$item);
+
         return view('site.index',array(
             'menu'=>$menu,
-            'pages'=>$page,
+            'pages'=>$pages,
             'services'=>$services,
-            'portfolio'=>$portfolio,
+            'portfolios'=>$portfolios,
             'peoples'=>$peoples,
+            'clients'=>$clients,
         ));
 
     }

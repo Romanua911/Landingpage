@@ -123,5 +123,25 @@ class DatabaseSeeder extends Seeder
                 ]
             ]
         );
+        DB::table('clients')->insert(
+            [
+                [
+                    'name'=>'Iphone',
+                    'images'=>'client_logo1.png'
+                ],
+                [
+                    'name'=>'Android',
+                    'images'=>'client_logo2.png',
+                ],
+                [
+                    'name'=>'Samsung',
+                    'images'=>'client_logo3.png',
+                ],
+                [
+                'name'=>'Microsoft',
+                'images'=>'client_logo5.png',
+                ]
+            ]
+        );
     }
 }
