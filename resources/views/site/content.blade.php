@@ -99,28 +99,20 @@
     <!-- Portfolio Filters -->
     <div class="portfolio">
 
+        @if(isset($filters))
         <div id="filters" class="sixteen columns">
             <ul class="clearfix">
                 <li><a id="all" href="#" data-filter="*" class="active">
                         <h5>All</h5>
                     </a></li>
-                <li><a class="" href="#" data-filter=".prototype">
-                        <h5>Prototype</h5>
-                    </a></li>
-                <li><a class="" href="#" data-filter=".design">
-                        <h5>Design</h5>
-                    </a></li>
-                <li><a class="" href="#" data-filter=".android">
-                        <h5>Android</h5>
-                    </a></li>
-                <li><a class="" href="#" data-filter=".appleIOS">
-                        <h5>Apple IOS</h5>
-                    </a></li>
-                <li><a class="" href="#" data-filter=".web">
-                        <h5>Web App</h5>
-                    </a></li>
+                @foreach($filters as $filter)
+                    <li><a class="" href="#" data-filter=".{{ $filter->filter }}">
+                            <h5>{{ $filter->filter }}</h5>
+                        </a></li>
+                @endforeach
             </ul>
         </div>
+        @endif
         <!--/Portfolio Filters -->
 
         <!-- Portfolio Wrapper -->
